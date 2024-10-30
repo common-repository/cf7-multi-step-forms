@@ -1,0 +1,288 @@
+.wpcf7-form input[type=email], .wpcf7-form input[type=password],
+.wpcf7-form input[type=search], .wpcf7-form input[type=number],
+.wpcf7-form input[type=text], .wpcf7-form input[type=url], .wpcf7-form textarea, .wpcf7-form input[type=date], .wpcf7-select {
+    padding: .6180469716em;
+    background-color: #f2f2f2;
+    color: #43454b;
+    outline: 0;
+    border: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    font-weight: 400;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.125);
+}
+
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+.cf7wpms-style1 {
+	margin: 0px -20px 20px 20px !important
+}
+.cf7wpms-style1:before, .cf7wpms-style1:after {
+    display: table;
+    content: " ";
+}
+.cf7wpms-style1:after {
+    clear: both;
+}
+.cf7wpms-style1 li{
+    float: left;
+    list-style: none!important;
+    padding: 0;
+    margin: 0;
+	width: 25%;
+}
+.cf7wpms-style1 li a {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin-right: 30px;
+    padding: 10px;
+    float: left;
+    font-size: 15px;
+    line-height: 40px;
+    text-decoration: none;
+    transition: .1s;
+}
+.cf7wpms-style1 li.active a {
+    color: #fff;
+    background-color: #5d2e78;
+}
+.cf7wpms-style1 li a, .cf7wpms-style1 li a:after, .cf7wpms-style1 li a:before {
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.cf7wpms-style1 li a:before {
+    border-top: 30px solid #eee;
+    border-bottom: 30px solid #eee;
+    border-left: 20px solid transparent;
+}
+.cf7wpms-style1 li a:after, .cf7wpms-style1 li a:before {
+    width: 0;
+    height: 0;
+    position: absolute;
+    content: "";
+    top: 0;
+    transition: .1s;
+}
+.cf7wpms-style1 li a:before {
+    left: -20px;
+}
+.cf7wpms-style1 li.active a:before {
+    border-top: 30px solid #5d2e78;
+    border-bottom: 30px solid #5d2e78;
+}
+.cf7wpms-style1 li span {
+    color: #ccc;
+    background-color: #FFF;
+    border-color: #ccc;
+}
+.cf7wpms-style1 li span {
+    display: block;
+    float: left;
+    font-size: 14px;
+    text-align: center;
+    width: 31px;
+    margin: 5px 5px 5px 0;
+    line-height: 26px;
+    border: 2px solid;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+.cf7wpms-style1 li.active span {
+    color: #61ca14;
+    background-color: #FFF;
+    border-color: #A3C1C9;
+}
+.cf7wpms-style1 li.active .current-info {
+    position: absolute;
+    left: -999em;
+}
+.cf7wpms-style1 li.active span {
+    text-shadow: none;
+    border: 2px solid;
+}
+.cf7wpms-style1 li a:after {
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 20px solid #eee;
+}
+.cf7wpms-style1 li a:after {
+    right: -20px;
+}
+.cf7wpms-style1 li.active a:after {
+    border-left: 20px solid #5d2e78;
+}
+.cf7wpms-style1 li a {
+    color: #333;
+    background-color: #eee;
+}
+
+.cf7wpms-panel {
+	display: none;
+}
+.cf7wpms-panel.active {
+	display: block;
+}
+.cf7wpms-nav {
+	display: flex;
+}
+.cf7wpms-nav {
+	display: flex;
+}
+.cf7wpms-nav-left, .cf7wpms-nav-right, .cf7wpms-nav-submit {
+	flex: 0 0 50%;
+}
+.cf7wpms-nav-left {
+	text-align: left;
+}
+.cf7wpms-nav-right, .cf7wpms-nav-submit {
+	text-align: right;
+}
+.btn-cf7wpms-left{
+	opacity: 0;
+}
+.btn-cf7wpms-submit{
+	display: none;
+}
+.cf7wpms-content input[type=email], .cf7wpms-content input[type=password], .cf7wpms-content input[type=search], .cf7wpms-content input[type=text], .cf7wpms-content input[type=url], .cf7wpms-content textarea {
+	width: 100%;
+	border: 1px solid transparent;
+}
+
+.btn-cf7wpms-left, .btn-cf7wpms-right, .btn-cf7wpms-submit {
+    position: relative;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    transition-timing-function: ease-in;
+    overflow: hidden;
+}
+.ld.ld-spin {
+    -webkit-animation: ld-spin 1s infinite;
+    animation: ld-spin 1s infinite;
+}
+.btn-cf7wpms-right .ld-spin, .btn-cf7wpms-submit .ld-spin{
+    position: absolute;
+    margin: -.5em 0;
+    z-index: -100;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    transition-timing-function: ease-in;
+}
+.btn-cf7wpms-left .ld-spin{
+    position: absolute;
+    margin: -.5em 0;
+    opacity: 0;
+    z-index: -100;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    transition-timing-function: ease-in;
+}
+.ld-ball:after, .ld-ring:after, body, html {
+    width: 100%;
+    height: 100%;
+}
+.ld-ball:after, .ld-hourglass:after, .ld-ring:after {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: " ";
+    display: inline-block;
+    background: center center no-repeat;
+    background-size: cover;
+}
+.ld-hourglass:after, .ld-pie:after, .ld-ring:after {
+    border-radius: 50%;
+    border-style: solid;
+}
+.ld-ring:after {
+    -webkit-background-clip: padding-box;
+    box-sizing: border-box;
+    border-width: 3px;
+    border-color: #fff #fff #fff transparent;
+}
+@keyframes ld-spin{0%{-webkit-transform:rotate(0);transform:rotate(0);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg);animation-timing-function:cubic-bezier(.215,.61,.355,1)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes ld-spin{0%{-webkit-transform:rotate(0);transform:rotate(0);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}50%{-webkit-transform:rotate(180deg);transform:rotate(180deg);animation-timing-function:cubic-bezier(.215,.61,.355,1)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.ld.ld-spin{-webkit-animation:ld-spin 1s infinite;animation:ld-spin 1s infinite}@keyframes ld-spin-fast{0%{-webkit-transform:rotate(0);transform:rotate(0);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}50%{-webkit-transform:rotate(900deg);transform:rotate(900deg);animation-timing-function:cubic-bezier(.215,.61,.355,1)}to{-webkit-transform:rotate(1800deg);transform:rotate(1800deg)}}@-webkit-keyframes ld-spin-fast{0%{-webkit-transform:rotate(0);transform:rotate(0);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}50%{-webkit-transform:rotate(900deg);transform:rotate(900deg);animation-timing-function:cubic-bezier(.215,.61,.355,1)}to{-webkit-transform:rotate(1800deg);transform:rotate(1800deg)}}.ld.ld-spin-fast{-webkit-animation:ld-spin-fast 1s infinite;animation:ld-spin-fast 1s infinite}
+
+
+.ld-ball, .ld-cross, .ld-hourglass, .ld-loader, .ld-pie, .ld-ring, .ld-spinner, .ld-square {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    color: inherit;
+    display: inline-block;
+	top: 50%;
+    left: auto;
+    right: 1em;
+}
+.cf7wpms-nav .cf7wpms-loading{
+    padding-right: 2.7em !important;
+}
+.cf7wpms-nav .cf7wpms-loading .ld {
+    opacity: 1;
+    z-index: auto;
+}
+.wpcf7 *{
+	outline: none !important;
+}
+.cf7wpms-content .cf7wpms-error {
+    border: 1px solid #e01c1c !important;
+	box-shadow: inset 0 1px 1px rgba(214, 39, 39, 0.125) !important;
+}
+.wpcf7-form .cf7wpms-panel .wpcf7-submit {
+	display: none;
+}
+.wpcf7-form .cf7wpms-panel .ajax-loader {
+	display: none !important;
+}
